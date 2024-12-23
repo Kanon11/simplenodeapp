@@ -15,6 +15,7 @@ function generateLmsTransactionId(prefix, msisdn) {
 // POST API route
 app.post('/api/transaction', (req, res) => {
   const { msisdn, adjustmentType, points, description, channel } = req.body;
+  console.log("🚀 ~ app.post ~ req.body:", req.body)
 
   if (!msisdn || !adjustmentType || !points || !description || !channel) {
     return res.status(400).json({
